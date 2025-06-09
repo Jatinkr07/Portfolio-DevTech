@@ -1,32 +1,41 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Instagram, Download, Mail } from 'lucide-react';
-import Typewriter from 'typewriter-effect';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Download,
+  Mail,
+} from "lucide-react";
+import Typewriter from "typewriter-effect";
 
 export default function Hero() {
   const [isHovering, setIsHovering] = useState(false);
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
+    { icon: Github, href: "https://github.com", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
   ];
 
   const scrollToContact = () => {
-    const element = document.getElementById('contact');
+    const element = document.getElementById("contact");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
+    >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -42,7 +51,7 @@ export default function Hero() {
               >
                 Hi there! 👋 I'm
               </motion.div>
-              
+
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -51,7 +60,7 @@ export default function Hero() {
               >
                 Jatin Kumar
               </motion.h1>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -61,11 +70,10 @@ export default function Hero() {
                 <Typewriter
                   options={{
                     strings: [
-                      'Full Stack Developer',
-                      'React Specialist',
-                      'Node.js Expert',
-                      'UI/UX Enthusiast',
-                      'Problem Solver'
+                      "Full Stack Developer",
+                      "MERN Stack",
+                      "UI/UX Enthusiast",
+                      "Problem Solver",
                     ],
                     autoStart: true,
                     loop: true,
@@ -82,11 +90,11 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed"
             >
-              Passionate about creating beautiful, functional, and user-friendly applications. 
-              I specialize in modern web technologies and love turning ideas into reality through code.
+              Passionate about creating beautiful, functional, and user-friendly
+              applications. I specialize in modern web technologies and love
+              turning ideas into reality through code.
             </motion.p>
 
-            {/* Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -102,8 +110,8 @@ export default function Hero() {
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600"
-                  initial={{ x: '100%' }}
-                  whileHover={{ x: '0%' }}
+                  initial={{ x: "100%" }}
+                  whileHover={{ x: "0%" }}
                   transition={{ duration: 0.3 }}
                 />
                 <span className="relative flex items-center justify-center gap-2">
@@ -125,14 +133,15 @@ export default function Hero() {
               </motion.button>
             </motion.div>
 
-            {/* Social Icons - Animated on Contact Button Hover */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
               className="flex items-center gap-6"
             >
-              <span className="text-slate-600 dark:text-slate-400 font-medium">Follow me:</span>
+              <span className="text-slate-600 dark:text-slate-400 font-medium">
+                Follow me:
+              </span>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -154,7 +163,6 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Image */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -175,8 +183,7 @@ export default function Hero() {
                   />
                 </div>
               </motion.div>
-              
-              {/* Floating Elements */}
+
               <motion.div
                 className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center"
                 animate={{ y: [0, -10, 0] }}
@@ -184,7 +191,7 @@ export default function Hero() {
               >
                 <span className="text-2xl">🚀</span>
               </motion.div>
-              
+
               <motion.div
                 className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center"
                 animate={{ y: [0, 10, 0] }}
@@ -192,7 +199,7 @@ export default function Hero() {
               >
                 <span className="text-xl">💻</span>
               </motion.div>
-              
+
               <motion.div
                 className="absolute top-1/2 -left-8 w-12 h-12 bg-gradient-to-r from-pink-400 to-red-500 rounded-full flex items-center justify-center"
                 animate={{ x: [0, -10, 0] }}

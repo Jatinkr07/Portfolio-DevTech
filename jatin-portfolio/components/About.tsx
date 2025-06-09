@@ -1,32 +1,35 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Code, Coffee, Heart, Users, Award, Lightbulb } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Code, Coffee, Heart, Users, Award, Lightbulb } from "lucide-react";
 
 export default function About() {
   const stats = [
-    { icon: Code, label: 'Projects Completed', value: '50+' },
-    { icon: Coffee, label: 'Cups of Coffee', value: '1000+' },
-    { icon: Heart, label: 'Happy Clients', value: '30+' },
-    { icon: Users, label: 'Team Projects', value: '20+' },
+    { icon: Code, label: "Projects Completed", value: "15+" },
+    { icon: Coffee, label: "Cups of Coffee", value: "50+" },
+    { icon: Heart, label: "Happy Clients", value: "15+" },
+    { icon: Users, label: "Team Projects", value: "20+" },
   ];
 
   const qualities = [
     {
       icon: Award,
-      title: 'Quality Focused',
-      description: 'I believe in writing clean, maintainable code that stands the test of time.'
+      title: "Quality Focused",
+      description:
+        "I believe in writing clean, maintainable code that stands the test of time.",
     },
     {
       icon: Lightbulb,
-      title: 'Problem Solver',
-      description: 'I love tackling complex challenges and finding elegant solutions.'
+      title: "Problem Solver",
+      description:
+        "I love tackling complex challenges and finding elegant solutions.",
     },
     {
       icon: Users,
-      title: 'Team Player',
-      description: 'Collaboration and communication are key to successful projects.'
+      title: "Team Player",
+      description:
+        "Collaboration and communication are key to successful projects.",
     },
   ];
 
@@ -44,7 +47,8 @@ export default function About() {
             About Me
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-            Passionate developer with a love for creating amazing digital experiences
+            Passionate developer with a love for creating amazing digital
+            experiences
           </p>
         </motion.div>
 
@@ -58,19 +62,23 @@ export default function About() {
           >
             <div className="prose prose-lg dark:prose-invert">
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                Hello! I'm Jatin Kumar, a passionate full-stack developer with over 3 years of experience 
-                in creating web applications that make a difference. My journey in tech started with curiosity 
-                and has evolved into a deep love for problem-solving through code.
+                Hello! I'm Jatin Kumar, a passionate full-stack developer with
+                over 1 years of experience in creating web applications that
+                make a difference. My journey in tech started with curiosity and
+                has evolved into a deep love for problem-solving through code.
               </p>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                I specialize in modern JavaScript frameworks like React and Node.js, but I'm always eager 
-                to learn new technologies. When I'm not coding, you'll find me exploring new tech trends, 
-                contributing to open source, or sharing knowledge with the developer community.
+                I specialize in modern JavaScript frameworks like React and
+                Node.js, but I'm always eager to learn new technologies. When
+                I'm not coding, you'll find me exploring new tech trends,
+                contributing to open source, or sharing knowledge with the
+                developer community.
               </p>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                My goal is to create applications that not only function flawlessly but also provide 
-                exceptional user experiences. I believe that great software is built on solid foundations 
-                of clean code, thoughtful design, and continuous learning.
+                My goal is to create applications that not only function
+                flawlessly but also provide exceptional user experiences. I
+                believe that great software is built on solid foundations of
+                clean code, thoughtful design, and continuous learning.
               </p>
             </div>
           </motion.div>

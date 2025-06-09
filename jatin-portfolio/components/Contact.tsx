@@ -1,80 +1,112 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+} from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'jatin@example.com',
-      href: 'mailto:jatin@example.com'
+      label: "Email",
+      value: "jatinkumar07911@gmail.com",
+      href: "mailto:jatinkumar07911@gmail.com",
     },
     {
       icon: Phone,
-      label: 'Phone',
-      value: '+91 9876543210',
-      href: 'tel:+919876543210'
+      label: "Phone",
+      value: "+91 9560510599",
+      href: "tel:+919560510599",
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'Mumbai, India',
-      href: '#'
-    }
+      label: "Location",
+      value: "Faridabad, Haryana, India",
+      href: "#",
+    },
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub', color: 'hover:text-slate-900' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-blue-600' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter', color: 'hover:text-blue-400' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-pink-500' },
+    {
+      icon: Github,
+      href: "https://github.com",
+      label: "GitHub",
+      color: "hover:text-slate-900",
+    },
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com",
+      label: "LinkedIn",
+      color: "hover:text-blue-600",
+    },
+    {
+      icon: Twitter,
+      href: "https://twitter.com",
+      label: "Twitter",
+      color: "hover:text-blue-400",
+    },
+    {
+      icon: Instagram,
+      href: "https://instagram.com",
+      label: "Instagram",
+      color: "hover:text-pink-500",
+    },
   ];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('idle');
+    setSubmitStatus("idle");
 
     try {
-      // Configure EmailJS (you'll need to set up EmailJS service)
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        "service_3onu40b",
+        "templateportfolio123",
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: 'jatin@example.com' // Your email
+          to_email: "jatinkumar07911@gmail.com",
         },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        "uPPR6GP9VTghg3ubq"
       );
 
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      setSubmitStatus('error');
-      console.error('Email sending failed:', error);
+      setSubmitStatus("error");
+      console.error("Email sending failed:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -112,8 +144,9 @@ export default function Contact() {
                 Let's Start a Conversation
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
-                I'm always excited to work on new projects and collaborate with amazing people. 
-                Whether you have a project in mind or just want to chat about tech, feel free to reach out!
+                I'm always excited to work on new projects and collaborate with
+                amazing people. Whether you have a project in mind or just want
+                to chat about tech, feel free to reach out!
               </p>
             </div>
 
@@ -193,7 +226,10 @@ export default function Contact() {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                  >
                     Name *
                   </label>
                   <input
@@ -214,7 +250,10 @@ export default function Contact() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                  >
                     Email *
                   </label>
                   <input
@@ -236,7 +275,10 @@ export default function Contact() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                >
                   Subject *
                 </label>
                 <input
@@ -257,7 +299,10 @@ export default function Contact() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                >
                   Message *
                 </label>
                 <textarea
@@ -300,23 +345,25 @@ export default function Contact() {
               </motion.div>
 
               {/* Status Messages */}
-              {submitStatus === 'success' && (
+              {submitStatus === "success" && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg text-green-700 dark:text-green-300"
                 >
-                  Thanks! Your message has been sent successfully. I'll get back to you soon!
+                  Thanks! Your message has been sent successfully. I'll get back
+                  to you soon!
                 </motion.div>
               )}
 
-              {submitStatus === 'error' && (
+              {submitStatus === "error" && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-300"
                 >
-                  Oops! Something went wrong. Please try again or contact me directly.
+                  Oops! Something went wrong. Please try again or contact me
+                  directly.
                 </motion.div>
               )}
             </form>

@@ -1,119 +1,134 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import { Briefcase, GraduationCap, Award, MapPin, Calendar, Users, TrendingUp } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import {
+  Briefcase,
+  GraduationCap,
+  Award,
+  MapPin,
+  Calendar,
+  Users,
+  TrendingUp,
+} from "lucide-react";
 
 export default function Experience() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const experiences = [
     {
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      location: "San Francisco, CA",
+      title: "Full Stack Developer",
+      company: "Encrobytes",
+      location: "Faridabad. Haryana, India",
       date: "2022 - Present",
       type: "work",
       description: [
         "Led development of 5+ major web applications using React and Node.js",
         "Mentored junior developers and established coding standards",
         "Improved application performance by 40% through optimization",
-        "Collaborated with cross-functional teams to deliver projects on time"
+        "Collaborated with cross-functional teams to deliver projects on time",
       ],
       achievements: [
         "Team Lead for 8 developers",
         "40% performance improvement",
-        "5+ major projects delivered"
+        "5+ major projects delivered",
       ],
-      technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB"]
+      technologies: ["React", "Node.js", "Javascript", "Express.js", "MongoDB"],
     },
-    {
-      title: "Full Stack Developer",
-      company: "Digital Innovations Ltd",
-      location: "New York, NY",
-      date: "2020 - 2022",
-      type: "work",
-      description: [
-        "Developed and maintained 10+ client projects",
-        "Implemented responsive designs with 98% cross-browser compatibility",
-        "Built RESTful APIs serving 100K+ daily requests",
-        "Reduced bug reports by 60% through comprehensive testing"
-      ],
-      achievements: [
-        "10+ client projects",
-        "98% browser compatibility",
-        "100K+ daily API requests"
-      ],
-      technologies: ["Vue.js", "Express", "PostgreSQL", "Docker", "Redis"]
-    },
-    {
-      title: "Frontend Developer",
-      company: "StartupXYZ",
-      location: "Austin, TX",
-      date: "2019 - 2020",
-      type: "work",
-      description: [
-        "Created user-friendly interfaces for mobile and web platforms",
-        "Collaborated with UX designers to implement pixel-perfect designs",
-        "Optimized applications for speed and scalability",
-        "Contributed to open-source projects and company blog"
-      ],
-      achievements: [
-        "Mobile-first approach",
-        "Pixel-perfect designs",
-        "Open-source contributor"
-      ],
-      technologies: ["React", "JavaScript", "Sass", "Webpack", "Jest"]
-    },
+    // {
+    //   title: "Full Stack Developer",
+    //   company: "Digital Innovations Ltd",
+    //   location: "New York, NY",
+    //   date: "2020 - 2022",
+    //   type: "work",
+    //   description: [
+    //     "Developed and maintained 10+ client projects",
+    //     "Implemented responsive designs with 98% cross-browser compatibility",
+    //     "Built RESTful APIs serving 100K+ daily requests",
+    //     "Reduced bug reports by 60% through comprehensive testing",
+    //   ],
+    //   achievements: [
+    //     "10+ client projects",
+    //     "98% browser compatibility",
+    //     "100K+ daily API requests",
+    //   ],
+    //   technologies: ["Vue.js", "Express", "PostgreSQL", "Docker", "Redis"],
+    // },
+    // {
+    //   title: "Frontend Developer",
+    //   company: "StartupXYZ",
+    //   location: "Austin, TX",
+    //   date: "2019 - 2020",
+    //   type: "work",
+    //   description: [
+    //     "Created user-friendly interfaces for mobile and web platforms",
+    //     "Collaborated with UX designers to implement pixel-perfect designs",
+    //     "Optimized applications for speed and scalability",
+    //     "Contributed to open-source projects and company blog",
+    //   ],
+    //   achievements: [
+    //     "Mobile-first approach",
+    //     "Pixel-perfect designs",
+    //     "Open-source contributor",
+    //   ],
+    //   technologies: ["React", "JavaScript", "Sass", "Webpack", "Jest"],
+    // },
     {
       title: "Bachelor of Computer Science",
-      company: "University of Technology",
-      location: "Boston, MA",
-      date: "2016 - 2019",
+      company: "J.C. Bose University of Science and Technology, YMCA",
+      location: "Faridabad, Haryana, India",
+      date: "2021 - 2025",
       type: "education",
       description: [
-        "Graduated with First Class Honors",
         "Specialized in Software Engineering and Web Technologies",
-        "Led university coding club with 100+ members",
-        "Published research paper on modern web frameworks"
+        "Participant in Open-Source club with 20+ members",
       ],
       achievements: [
-        "First Class Honors",
-        "100+ club members",
-        "Published research"
+        "Full Stack Proficiency",
+        "20+ club members",
+        "Published research",
       ],
-      technologies: ["Java", "Python", "C++", "Database Design", "Algorithms"]
+      technologies: ["C++", "Javascript", "Database Design", "Framework"],
     },
     {
-      title: "AWS Certified Solutions Architect",
-      company: "Amazon Web Services",
+      title: "MERN Stack Development Course",
+      company: "CodeHelp",
       location: "Online",
-      date: "2021",
+      date: "2023",
       type: "certification",
       description: [
-        "Achieved professional-level AWS certification",
-        "Demonstrated expertise in cloud architecture",
+        "Achieved professional-level MERN Stack certification",
+        "Demonstrated expertise in Frontend and Backend architecture",
         "Designed scalable and cost-effective solutions",
-        "Applied cloud best practices in production environments"
+        "Applied  best practices in production environments",
       ],
       achievements: [
         "Professional certification",
-        "Cloud architecture expert",
-        "Production deployments"
+        "MVC architecture expert",
+        "Production deployments",
       ],
-      technologies: ["AWS", "EC2", "S3", "Lambda", "CloudFormation"]
-    }
+      technologies: [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "Javascript",
+      ],
+    },
   ];
 
   const getIcon = (type: string) => {
     switch (type) {
-      case 'work':
+      case "work":
         return <Briefcase className="w-6 h-6" />;
-      case 'education':
+      case "education":
         return <GraduationCap className="w-6 h-6" />;
-      case 'certification':
+      case "certification":
         return <Award className="w-6 h-6" />;
       default:
         return <Briefcase className="w-6 h-6" />;
@@ -122,32 +137,34 @@ export default function Experience() {
 
   const getIconStyle = (type: string, isActive: boolean) => {
     const baseStyle = {
-      boxShadow: isActive ? '0 0 20px rgba(59, 130, 246, 0.6)' : '0 3px 10px rgba(0, 0, 0, 0.1)',
-      transform: isActive ? 'scale(1.2)' : 'scale(1)',
-      transition: 'all 0.3s ease'
+      boxShadow: isActive
+        ? "0 0 20px rgba(59, 130, 246, 0.6)"
+        : "0 3px 10px rgba(0, 0, 0, 0.1)",
+      transform: isActive ? "scale(1.2)" : "scale(1)",
+      transition: "all 0.3s ease",
     };
 
     switch (type) {
-      case 'work':
-        return { 
+      case "work":
+        return {
           ...baseStyle,
-          background: isActive 
-            ? 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)' 
-            : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+          background: isActive
+            ? "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)"
+            : "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         };
-      case 'education':
-        return { 
+      case "education":
+        return {
           ...baseStyle,
-          background: isActive 
-            ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' 
-            : 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+          background: isActive
+            ? "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+            : "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
         };
-      case 'certification':
-        return { 
+      case "certification":
+        return {
           ...baseStyle,
-          background: isActive 
-            ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' 
-            : 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+          background: isActive
+            ? "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+            : "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
         };
       default:
         return baseStyle;
@@ -155,20 +172,25 @@ export default function Experience() {
   };
 
   const getContentStyle = (isActive: boolean) => ({
-    background: isActive 
-      ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)'
-      : 'rgb(255, 255, 255)',
-    boxShadow: isActive 
-      ? '0 20px 40px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.1)'
-      : '0 10px 25px rgba(0, 0, 0, 0.1)',
-    border: isActive ? '2px solid rgba(59, 130, 246, 0.2)' : '1px solid rgba(59, 130, 246, 0.1)',
-    borderRadius: '16px',
-    transform: isActive ? 'scale(1.02)' : 'scale(1)',
-    transition: 'all 0.3s ease'
+    background: isActive
+      ? "linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)"
+      : "rgb(255, 255, 255)",
+    boxShadow: isActive
+      ? "0 20px 40px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.1)"
+      : "0 10px 25px rgba(0, 0, 0, 0.1)",
+    border: isActive
+      ? "2px solid rgba(59, 130, 246, 0.2)"
+      : "1px solid rgba(59, 130, 246, 0.1)",
+    borderRadius: "16px",
+    transform: isActive ? "scale(1.02)" : "scale(1)",
+    transition: "all 0.3s ease",
   });
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/50">
+    <section
+      id="experience"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/50"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -191,18 +213,17 @@ export default function Experience() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <VerticalTimeline
-            lineColor="rgb(59, 130, 246)"
-          >
+          <VerticalTimeline lineColor="rgb(59, 130, 246)">
             {experiences.map((experience, index) => (
               <VerticalTimelineElement
                 key={index}
                 className="vertical-timeline-element--work"
                 contentStyle={getContentStyle(activeIndex === index)}
-                contentArrowStyle={{ 
-                  borderRight: activeIndex === index 
-                    ? '7px solid rgba(59, 130, 246, 0.2)' 
-                    : '7px solid rgb(255, 255, 255)' 
+                contentArrowStyle={{
+                  borderRight:
+                    activeIndex === index
+                      ? "7px solid rgba(59, 130, 246, 0.2)"
+                      : "7px solid rgb(255, 255, 255)",
                 }}
                 date={experience.date}
                 dateClassName="text-slate-600 dark:text-slate-400 font-semibold"
@@ -241,8 +262,8 @@ export default function Experience() {
                   {/* Description */}
                   <ul className="space-y-2 mb-4">
                     {experience.description.map((item, itemIndex) => (
-                      <motion.li 
-                        key={itemIndex} 
+                      <motion.li
+                        key={itemIndex}
                         className="text-slate-600 flex items-start"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -258,7 +279,7 @@ export default function Experience() {
                   {activeIndex === index && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
+                      animate={{ opacity: 1, height: "auto" }}
                       transition={{ duration: 0.3 }}
                       className="mb-4"
                     >
@@ -267,31 +288,41 @@ export default function Experience() {
                         Key Achievements
                       </h5>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                        {experience.achievements.map((achievement, achIndex) => (
-                          <motion.div
-                            key={achIndex}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.3, delay: achIndex * 0.1 }}
-                            className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium text-center"
-                          >
-                            {achievement}
-                          </motion.div>
-                        ))}
+                        {experience.achievements.map(
+                          (achievement, achIndex) => (
+                            <motion.div
+                              key={achIndex}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{
+                                duration: 0.3,
+                                delay: achIndex * 0.1,
+                              }}
+                              className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium text-center"
+                            >
+                              {achievement}
+                            </motion.div>
+                          )
+                        )}
                       </div>
                     </motion.div>
                   )}
 
                   {/* Technologies */}
                   <div>
-                    <h5 className="font-semibold text-slate-800 mb-2">Technologies Used</h5>
+                    <h5 className="font-semibold text-slate-800 mb-2">
+                      Technologies Used
+                    </h5>
                     <div className="flex flex-wrap gap-2">
                       {experience.technologies.map((tech, techIndex) => (
                         <motion.span
                           key={tech}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.3, delay: techIndex * 0.05 }}
+                          transition={{
+                            duration: 0.3,
+                            delay: techIndex * 0.05,
+                          }}
                           whileHover={{ scale: 1.05 }}
                           className="px-3 py-1 bg-gradient-to-r from-slate-100 to-slate-200 text-slate-700 rounded-full text-xs font-medium"
                         >

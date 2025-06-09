@@ -1,8 +1,16 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, ChevronLeft, ChevronRight, Star, Eye, GitBranch } from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ExternalLink,
+  Github,
+  ChevronLeft,
+  ChevronRight,
+  Star,
+  Eye,
+  GitBranch,
+} from "lucide-react";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(0);
@@ -11,8 +19,10 @@ export default function Projects() {
   const projects = [
     {
       title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, payment integration, admin dashboard, and real-time notifications.",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description:
+        "A full-featured e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, payment integration, admin dashboard, and real-time notifications.",
+      image:
+        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "Node.js", "MongoDB", "Stripe", "Socket.io"],
       github: "https://github.com",
       live: "https://demo.com",
@@ -21,21 +31,29 @@ export default function Projects() {
         "Shopping cart and wishlist functionality",
         "Payment gateway integration",
         "Admin dashboard for inventory management",
-        "Real-time order tracking"
+        "Real-time order tracking",
       ],
       stats: {
         stars: 124,
         forks: 45,
-        views: "2.3k"
+        views: "2.3k",
       },
       category: "Full Stack",
-      status: "Live"
+      status: "Live",
     },
     {
       title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, file sharing, and team communication features. Built with modern web technologies for optimal performance.",
-      image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "WebSocket"],
+      description:
+        "A collaborative task management application with real-time updates, file sharing, and team communication features. Built with modern web technologies for optimal performance.",
+      image:
+        "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "WebSocket",
+      ],
       github: "https://github.com",
       live: "https://demo.com",
       features: [
@@ -43,20 +61,22 @@ export default function Projects() {
         "File upload and sharing",
         "Project timeline visualization",
         "Team chat integration",
-        "Mobile-responsive design"
+        "Mobile-responsive design",
       ],
       stats: {
         stars: 89,
         forks: 23,
-        views: "1.8k"
+        views: "1.8k",
       },
       category: "SaaS",
-      status: "Live"
+      status: "Live",
     },
     {
       title: "Weather Analytics Dashboard",
-      description: "An interactive weather analytics dashboard with data visualization, historical trends, and predictive analytics. Features beautiful charts and real-time weather data.",
-      image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description:
+        "An interactive weather analytics dashboard with data visualization, historical trends, and predictive analytics. Features beautiful charts and real-time weather data.",
+      image:
+        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["React", "D3.js", "Express", "Weather API", "Chart.js"],
       github: "https://github.com",
       live: "https://demo.com",
@@ -65,20 +85,22 @@ export default function Projects() {
         "Historical weather analysis",
         "Location-based forecasting",
         "Customizable dashboard widgets",
-        "Export functionality"
+        "Export functionality",
       ],
       stats: {
         stars: 67,
         forks: 18,
-        views: "1.2k"
+        views: "1.2k",
       },
       category: "Data Viz",
-      status: "Live"
+      status: "Live",
     },
     {
       title: "Social Media Platform",
-      description: "A modern social media platform with real-time messaging, content sharing, and social features. Built with scalability and user experience in mind.",
-      image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
+      description:
+        "A modern social media platform with real-time messaging, content sharing, and social features. Built with scalability and user experience in mind.",
+      image:
+        "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
       technologies: ["Vue.js", "Node.js", "Redis", "AWS S3", "Socket.io"],
       github: "https://github.com",
       live: "https://demo.com",
@@ -87,16 +109,16 @@ export default function Projects() {
         "Content creation and sharing",
         "User profiles and connections",
         "News feed algorithm",
-        "Media upload and optimization"
+        "Media upload and optimization",
       ],
       stats: {
         stars: 156,
         forks: 72,
-        views: "3.1k"
+        views: "3.1k",
       },
       category: "Social",
-      status: "Beta"
-    }
+      status: "Beta",
+    },
   ];
 
   const nextProject = () => {
@@ -121,7 +143,8 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-            A showcase of my recent work and the technologies I love working with
+            A showcase of my recent work and the technologies I love working
+            with
           </p>
         </motion.div>
 
@@ -150,30 +173,34 @@ export default function Projects() {
                     alt={projects[activeProject].title}
                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  
+
                   {/* Overlay */}
                   <motion.div
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: hoveredProject === activeProject ? 1 : 0 }}
+                    animate={{
+                      opacity: hoveredProject === activeProject ? 1 : 0,
+                    }}
                     className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
                   />
-                  
+
                   {/* Project Stats */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ 
+                    animate={{
                       opacity: hoveredProject === activeProject ? 1 : 0,
-                      y: hoveredProject === activeProject ? 0 : 20
+                      y: hoveredProject === activeProject ? 0 : 20,
                     }}
                     className="absolute top-4 left-4 right-4"
                   >
                     <div className="flex justify-between items-start">
                       <div className="flex gap-2">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          projects[activeProject].status === 'Live' 
-                            ? 'bg-green-500/20 text-green-300 border border-green-500/30'
-                            : 'bg-yellow-500/20 text-yellow-300 border border-yellow-500/30'
-                        }`}>
+                        <span
+                          className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            projects[activeProject].status === "Live"
+                              ? "bg-green-500/20 text-green-300 border border-green-500/30"
+                              : "bg-yellow-500/20 text-yellow-300 border border-yellow-500/30"
+                          }`}
+                        >
                           {projects[activeProject].status}
                         </span>
                         <span className="px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-xs font-medium">
@@ -182,13 +209,13 @@ export default function Projects() {
                       </div>
                     </div>
                   </motion.div>
-                  
+
                   {/* Action Buttons */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ 
+                    animate={{
                       opacity: hoveredProject === activeProject ? 1 : 0,
-                      y: hoveredProject === activeProject ? 0 : 20
+                      y: hoveredProject === activeProject ? 0 : 20,
                     }}
                     className="absolute bottom-4 left-4 right-4"
                   >
@@ -223,7 +250,7 @@ export default function Projects() {
               {/* Project Details */}
               <div className="space-y-6">
                 <div>
-                  <motion.h3 
+                  <motion.h3
                     className="text-3xl font-bold text-slate-900 dark:text-white mb-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -231,9 +258,9 @@ export default function Projects() {
                   >
                     {projects[activeProject].title}
                   </motion.h3>
-                  
+
                   {/* GitHub Stats */}
-                  <motion.div 
+                  <motion.div
                     className="flex items-center gap-6 mb-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -241,19 +268,25 @@ export default function Projects() {
                   >
                     <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
                       <Star className="w-4 h-4" />
-                      <span className="text-sm font-medium">{projects[activeProject].stats.stars}</span>
+                      <span className="text-sm font-medium">
+                        {projects[activeProject].stats.stars}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
                       <GitBranch className="w-4 h-4" />
-                      <span className="text-sm font-medium">{projects[activeProject].stats.forks}</span>
+                      <span className="text-sm font-medium">
+                        {projects[activeProject].stats.forks}
+                      </span>
                     </div>
                     <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
                       <Eye className="w-4 h-4" />
-                      <span className="text-sm font-medium">{projects[activeProject].stats.views}</span>
+                      <span className="text-sm font-medium">
+                        {projects[activeProject].stats.views}
+                      </span>
                     </div>
                   </motion.div>
-                  
-                  <motion.p 
+
+                  <motion.p
                     className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -281,7 +314,7 @@ export default function Projects() {
                         transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
                         className="flex items-center text-slate-600 dark:text-slate-400"
                       >
-                        <motion.span 
+                        <motion.span
                           className="w-2 h-2 bg-blue-500 rounded-full mr-3"
                           whileHover={{ scale: 1.5 }}
                         />
@@ -369,8 +402,8 @@ export default function Projects() {
                   onClick={() => setActiveProject(index)}
                   className={`relative overflow-hidden transition-all duration-300 ${
                     index === activeProject
-                      ? 'w-12 h-3 bg-blue-600 dark:bg-blue-400'
-                      : 'w-3 h-3 bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500'
+                      ? "w-12 h-3 bg-blue-600 dark:bg-blue-400"
+                      : "w-3 h-3 bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500"
                   } rounded-full`}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
@@ -378,8 +411,8 @@ export default function Projects() {
                   {index === activeProject && (
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500"
-                      initial={{ x: '-100%' }}
-                      animate={{ x: '0%' }}
+                      initial={{ x: "-100%" }}
+                      animate={{ x: "0%" }}
                       transition={{ duration: 0.5 }}
                     />
                   )}
@@ -414,7 +447,9 @@ export default function Projects() {
               <motion.div
                 key={index}
                 className={`relative group cursor-pointer rounded-xl overflow-hidden transition-all duration-300 ${
-                  index === activeProject ? 'ring-2 ring-blue-500 shadow-lg' : 'hover:shadow-lg'
+                  index === activeProject
+                    ? "ring-2 ring-blue-500 shadow-lg"
+                    : "hover:shadow-lg"
                 }`}
                 whileHover={{ y: -5 }}
                 onClick={() => setActiveProject(index)}
@@ -429,9 +464,7 @@ export default function Projects() {
                   <h4 className="text-white font-semibold text-sm truncate">
                     {project.title}
                   </h4>
-                  <p className="text-white/80 text-xs">
-                    {project.category}
-                  </p>
+                  <p className="text-white/80 text-xs">{project.category}</p>
                 </div>
               </motion.div>
             ))}
